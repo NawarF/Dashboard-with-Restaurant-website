@@ -1,0 +1,773 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    /* font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    list-style: none;
+}
+
+
+:root{
+    --main-color:#4834d4;
+    --red:#e74c3c;
+    --orange:#f39c12;
+    --black:#34495e;
+    --white:#fff;
+    --light-bg:#f5f5f5;
+    --light-color:#999;
+    --border:.2rem solid var(--black);
+    --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+    --hover :steelblue;
+ }
+
+html{
+scroll-behavior: smooth;
+}
+.container{
+     display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--light-bg)  ;
+    
+ 
+}
+
+#admin-form{
+    border: 1px solid;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 26rem;
+    height: 16rem;
+    background-color: white;
+    border-radius: 4px;
+    max-height: fit-content;
+    
+   
+}
+
+#admin-form form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+#admin-form form p{
+    color: #bbb;
+    margin-bottom: 2px;
+
+}
+#admin-form form p span{
+    color: steelblue;
+}
+.name{
+    height: 2rem;
+    width: 19rem;
+    padding: 1rem;
+    border-radius: 6px;
+    background: #eee;
+    outline: nom;
+    outline: none;
+    border: none;
+    transition: .4s;
+}
+.name:focus{
+    border: 1px solid steelblue
+}
+.submit{
+    height: 2rem;
+    width: 19rem;
+    background-color: rgb(103, 163, 212);
+    border: none;
+    border-radius: 3px;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    text-align: center;
+    transition: .4S;
+
+}
+.submit:hover{
+    background-color: steelblue;
+    letter-spacing: .3PX;
+}
+
+/* ------message ---- */
+.message{
+    position: sticky;
+    top: 0;
+    margin: 3px auto;
+    background-color: var(--light-bg);
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: space-between;
+    background: white;
+    border-radius: 4px;
+}
+
+.message p{
+    font-size: 1rem;
+    color:var(--black);
+}
+.message i{
+    font-size:1.5rem;
+    color:var(--red);
+    cursor: pointer;
+ }
+
+ /* -------start admin-header-------- */
+#admin-header{
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    box-shadow: var(--box-shadow);
+    z-index: 1000;
+    background-color: var(--white);
+
+}
+
+
+.header-flex{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid;
+    padding: 10px;
+    box-shadow: 1px 0px #888888;
+    padding: 1rem 7rem;
+    position: relative;
+}
+.admin-logo{
+    font-size: x-small;
+   
+}
+
+.admin-logo .test{
+    color: #000;
+}
+.admin-menu{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.admin-menu li{
+    font-size: large;
+}
+.admin-menu li a{
+    color: #777;
+    transition: .4s;
+}
+
+.admin-menu li a:hover,
+#admin-click:hover{
+    color: var(--hover);
+    font-size: larger;
+
+}
+#admin-click{
+    cursor: pointer;
+    transition: .4s;
+
+}
+.icons > *{
+    cursor: pointer;
+    font-size: 19px;
+    padding-left: 8px;
+    color: var(--light-color);
+    transition: .4s;
+}
+.icons > *:hover{
+    color: var(--main-color);
+}
+
+#menu-btn{
+    display: none;
+}
+.profile{
+    border: 1px solid;
+    position: absolute;
+    top: 4rem;
+    right: 8rem;
+    width: 15rem;
+    padding: 10px 5px;
+    display: none;
+    animation: fadeIn .4s linear;
+    z-index: 100;
+    background-color: var(--white);
+
+}
+@keyframes fadeIn {
+    0%{
+        transform: translatey(1rem);
+    }
+    
+}
+.profile.active{
+    display: block;
+}
+.profile p{
+    text-align: center;
+    margin-bottom: 5px;
+}
+.update-btn,.option,.delete-btn{
+    width: 100%;
+    display: block;
+    cursor: pointer;
+    text-align: center;
+    color: white;
+    text-transform: capitalize;
+    margin: 4px 2px;
+    padding: 8px 0px;
+    border-radius: 5px;
+    transition: .4s;
+}
+.update-btn{
+    background-color: var(--main-color);
+}
+.option{
+    background-color: var(--red);
+}
+.delete-btn{
+    background-color: var(--orange);
+}
+
+.box-btn{
+    display: flex;
+   
+}
+.option:hover ,.update-btn:hover ,.delete-btn:hover{
+    background-color: var(--black);
+    letter-spacing: 1px;
+}
+
+
+  /* -------end admin-header--------*/
+
+  /* --------start dashboard home page------ */
+  #sec-dashboard{
+    width: 100%;
+
+  }
+.title{
+    text-align: center;
+    margin: 2rem 0;
+}
+.dasch-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    align-items: flex-start;
+    gap: 1.5rem;
+    width: 80%;
+    margin: auto;
+
+}
+ .dasch-container .dash-box{
+    border: var(--border);
+    padding: 1.5rem;
+    border-radius: 5px;
+    text-align: center;
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+
+} 
+
+.dasch-container .dash-box h3{
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--black);
+}
+.dasch-container .dash-box p{
+background: var(--light-bg);
+    padding: 13px 0;
+    border-radius: 6px;
+    font-size: 19px;
+    color: var(--light-color);
+    margin: 13px;
+    
+}
+
+.dasch-container .dash-box a{
+    color: var(--white);
+    background-color: var(--main-color);
+    padding: 9px 32px;
+    display: block;
+    margin-top: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .4s;
+}
+.dasch-container .dash-box a:hover{
+    background-color: var(--black);
+
+}
+
+  /* --------start dashboard home page------
+
+/* --------start product page ----------- */
+#products-form{
+margin: 2rem auto;
+}
+
+.form-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form-container form{
+display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin:0 auto;
+    /* max-width: 50rem; */
+     width: 26rem;
+    background-color: var(--white);
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    border:var(--border);
+    padding:2rem;
+    text-align: center;
+}
+.form-container form h1{
+text-align: center;
+font-size: 21px;
+/* color: var(--border); */
+color: black;
+font-weight: 600;}
+
+.form-container form  .p_input{
+    background-color: var(--light-bg);
+    width: 100%;
+    font-size: -0.2rem;
+    color: var(--black);
+    padding: .5rem .6rem;
+    border-radius: 4px;
+}
+.p_submit{
+    color: var(--white);
+    background-color: var(--main-color);
+    cursor: pointer;
+    border: none;
+    width: 100%;
+    font-size: -0.2rem;
+    border-radius: -1.5rem;
+    padding: .5rem .6rem;
+    border-radius: 4px;
+    transition: .4s;
+}
+.p_submit:hover{
+    background-color: var(--black);
+    letter-spacing: 1px;
+}
+
+.show-section{
+    width: 100%;
+}
+.product-conatiner{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px ,1fr));
+     gap: 5px;
+    align-items: center;
+    width: 80%;
+    margin: 15px auto ;
+}
+
+.pro-image{
+    text-align: center;
+}
+
+.pro-image img{
+    width: 10rem;
+}
+
+.box-product{
+background-color: var(--light-bg);
+/* border:var(--border); */
+width: 80%;
+padding:1.4rem;
+font-size: 1.8rem;
+color:var(--black);
+border-radius: .5rem;
+margin: 1rem 0;
+border: 1px solid;
+transition: .4s;
+}
+.box-product:hover{
+    transform: translateY(-10px);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.prod-details{
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 0 6px;}
+
+.prod-details p{
+font-size: 18px;
+color: black;}
+
+.box-product span{
+    margin:.5rem 1rem;
+    font-size: 16px;
+    color: black;
+}
+
+.prod-modify{
+display: flex;
+justify-content: space-around;
+padding: 0 1rem;
+align-items: center;
+flex-wrap: wrap;}
+
+.prod-modify a{
+text-decoration: none;
+color: var(--white);
+}
+.prod-update , .prod-delete{
+    padding: 6px 15px;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: 12px;
+    transition: .4s;
+    font-size: 18px;
+}
+.prod-update{
+    background-color: var(--orange);
+}
+
+.prod-delete{
+    background-color: var(--red);
+}
+.prod-modify .prod-update:hover, .prod-delete:hover{
+    background-color: var(--black);
+    letter-spacing: 1px;
+}
+
+.upd_pro_container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.upd_pro_container form{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid;
+    border-radius: 4px;
+    width: 26rem;
+    padding: 2rem;
+    background: var(--light-bg);
+
+
+}
+.img-div{
+    text-align: center;
+}
+.upd_pro_container form img{
+    width: 10rem;
+}
+
+
+.upd_pro_container form .up_value{
+
+padding: 10px 15px;
+    border-radius: 4px;
+    margin: 9px 0;
+    font-size: 16px;
+    color: var(--hover);
+    border-color: var(--light-bg);
+}
+
+    .upd_pro_container form span{
+    font-size: 15px;
+    color: var;
+    color: var(--light-color);
+    font-weight: 700;
+}
+
+.padding{
+padding: 9px 38px;
+border: none;
+color: var(--white);
+}
+/* --------end product page ----------- */
+
+/* --------start order page ----------- */
+
+#admin-order{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: var(--light-bg);
+
+   
+}
+#admin-order .title{
+    text-align: center;
+    margin: 25px 0;
+}
+
+.order-container{
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+gap: 2rem;
+width: 90%;
+margin: 1rem auto;
+}
+
+.order-container .order-box{
+    border: 1px solid;
+    padding: 1rem 1rem;
+    border-radius: 4px;
+    background-color: var(--white);
+}
+.order-container .order-box p{
+  
+    margin: 10px 0;
+    color: var(--black);
+    font-size: 17px;
+}
+.order-container .order-box p span {
+    color: var(--hover);
+}
+
+
+.orderstatus{
+width: 100%;
+padding: 4px;
+background: var(--light-bg);
+color: var(--black);
+font-size: 17px;
+border-radius: 4px;}
+
+.order-btn{
+    margin-top: 10px;
+    /* text-align: center; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 4px;
+}
+    .order-btn input{
+        padding: 9px 27px;
+        border: none;
+        border-radius: 4px;
+        color: var(--white);
+        cursor: pointer;
+        font-size: 16px;
+        transition: .4s;
+    }
+    .order-btn input:hover{
+        background-color: var(--black);
+        letter-spacing: 1px;
+    }
+
+    .order-update{
+        background-color: var(--main-color);
+    }
+  .order-delet{
+        background-color: var(--red);
+    }
+
+/* --------end order page ----------- */
+
+/* --------start Account admin page ----------- */
+
+#admin-account{
+    height: 100vh;
+    background: var(--light-bg);
+    display: flex;
+    flex-direction: column;
+}
+.account-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 20rem);
+   
+    gap: 2rem;
+    justify-content: center;
+  
+}
+
+.account-info{
+
+    background-color: var(--white);
+    text-align: center;
+    padding: 8px 0;
+    color: var(--black);
+    font-size: 17px;
+    box-shadow: var(--box-shadow);
+    border-radius: 6px;
+
+}
+.account-info .admin-register{
+    background-color: var(--orange);
+    color: var(--white);
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    /* margin: 10px 0; */
+    display: block;
+    margin: 0 51px;
+    transition: .4s;
+
+}
+.account-info p{
+    margin-bottom: 10px;
+}
+
+.admin-delete ,.admin-update{
+ display: inline-block;
+    color: var(--white);
+    padding: 8px 19px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 21px;
+    transition: .4s;
+}
+.admin-delete:hover ,.admin-update:hover ,.admin-register:hover{
+    background-color: var(--black);
+    letter-spacing: 1px;
+}
+.admin-delete{
+    background-color: var(--red);
+}
+.admin-update{
+    background-color: var(--orange);
+}
+/* --------end Account admin page ----------- */
+
+/* --------start regsiter  page ----------- */
+
+#register-form{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    background-color: var(--light-bg);
+}
+#register-form form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid;
+    padding: 1rem 3rem;
+    border-radius: 4px;
+    box-shadow: var(--box-shadow);
+    background: var(--white);
+    margin-top: 9rem;
+    width: 30%;
+}
+
+#register-form form input{
+    width: 100%;
+    padding: 0.5rem 1rem;
+    margin: 10px 0;
+    border-radius: 4px;
+    /* border: none; */
+    background: var(--light-bg);
+    /* outline: navajowhite; */
+    border: 1px solid var(--light-color);
+    color: var(--hover);
+    font-size: 16px;
+}
+
+#register-form form input[type ='submit']{
+    background-color: var(--main-color);
+    color: var(--white);
+    cursor: pointer;
+    transition: .4s;
+}
+
+
+#register-form form input[type ='submit']:hover{
+    background-color: var(--black);
+    letter-spacing: 1px;
+}
+
+/* --------end regsiter page ----------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* ----------start media query----------- */
+@media (max-width:884px) {
+    #menu-btn{
+        display: inline-block;
+    }
+    .admin-menu {
+        position: absolute;
+        top: 3rem;
+        left: 0;
+        right: 0;
+        display: block;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        transition: .2s linear;
+        /* padding: 1rem 1rem; */
+        border-bottom: var(--border);
+        width: 100%;
+        background-color: var(--white);
+    
+    }
+    
+    .admin-menu.active{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+    .admin-menu a{
+        display: block;
+      margin:2rem;
+    }
+}
+
+@media (max-width: 600px){
+    .admin-logo{
+        font-size: 8px;
+        margin-left: -6rem;
+    }
+    .icons{
+        margin-right: -5rem
+    }
+}
+
+    /* ----------end media query----------- */
